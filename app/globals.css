@@ -163,7 +163,40 @@
 .review-insight-pane .modal-actions{position:sticky;bottom:-22px;margin-left:-22px;margin-right:-22px;padding:14px 22px 0;background:linear-gradient(#ffffff00,#fff 18%,#fff)}
 .modal-actions .develop-action{background:#17675d;border-color:#17675d}.modal-actions .develop-action:hover{background:#0d584f}
 
-@media(max-width:800px){.evaluation-modal.review-workspace{height:min(900px,94vh)}.review-split{grid-template-columns:1fr!important;overflow:auto}.review-score-pane,.review-insight-pane{overflow:visible;padding:17px}.review-resizer{display:none}.review-score-hero{grid-template-columns:92px minmax(0,1fr);padding:15px}.score-ring{width:86px;height:86px}.score-ring>div{width:65px;height:65px}.score-ring strong{font-size:27px;line-height:65px}.review-score-hero h3{font-size:19px}.review-insight-pane .modal-actions{position:static;margin:14px 0 0;padding:14px 0 0}.proposal-input>div:first-child{display:block}.proposal-input>div:first-child strong{display:block;margin-top:3px}.proposal-input-row{grid-template-columns:1fr}.proposal-input-row button{width:100%}}
+/* Evidence-first scoring and the agent negotiation centerpiece. */
+.score-rubric{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0 4px}
+.score-rubric span{padding:8px 5px;border:1px solid #dfe2ea;border-radius:9px;background:#fff;text-align:center;font-size:8px;color:#687185}
+.score-rubric b{display:block;margin-bottom:2px;color:#2c3448;font-size:9px}
+.score-shift{display:flex;align-items:center;gap:5px!important;color:#242a3c!important}
+.score-shift small{font:800 12px Manrope!important;color:#8991a3!important;text-decoration:line-through;text-decoration-thickness:1px}
+.score-shift span{font-size:11px;color:#8a819f}
+.dual-score-track{position:relative;height:9px;margin:10px 0 0;border-radius:99px;background:#e7e9ef;overflow:hidden}
+.dual-score-track i,.dual-score-track b{position:absolute;left:0;top:0;height:100%;border-radius:99px}
+.dual-score-track i{opacity:.28;background:#4e5565!important}
+.dual-score-track b{height:5px;top:2px;background:linear-gradient(90deg,#7769df,#4f43b7)}
+.score-evidence{display:block;margin-top:7px;padding-top:7px;border-top:1px solid #eceef3;font-size:8.5px;line-height:1.45;color:#6f788a}
+.score-evidence:before{content:"WHY IT CHANGED  ";font-weight:900;letter-spacing:.45px;color:#5046ad}
+
+.agent-debate{margin-top:14px;border:1px solid #cfd5e4;border-radius:16px;background:linear-gradient(155deg,#fbfcff,#f3f5fa);box-shadow:0 13px 34px #1c284214;overflow:hidden}
+.agent-debate>header{display:flex;justify-content:space-between;align-items:center;padding:15px 16px;border-bottom:1px solid #dce1eb;background:#222d46;color:#fff}
+.agent-debate>header>div{display:flex;gap:10px;align-items:center}.agent-debate>header svg{width:19px;color:#b9b2ff}
+.agent-debate>header span{display:flex;flex-direction:column;gap:2px}.agent-debate>header b{font:850 15px Manrope}.agent-debate>header small{font-size:9px;color:#c7cfdf}
+.agent-debate>header em{font-style:normal;font-size:8px;font-weight:900;letter-spacing:1px;color:#c7f2e4;background:#16745f;border-radius:999px;padding:5px 8px}
+.debate-turn{display:grid;grid-template-columns:38px 1fr;gap:11px;margin:12px;padding:13px;border:1px solid #dfe3eb;border-radius:12px;background:#fff}
+.debate-avatar{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font:900 10px Manrope}
+.debate-turn strong{display:flex;flex-wrap:wrap;align-items:center;gap:7px;font:850 11px Manrope;color:#293147}
+.debate-turn strong small{font-size:7px;letter-spacing:.7px;border-radius:999px;padding:4px 6px}
+.debate-turn p{font-size:10.5px!important;line-height:1.55!important;color:#4f5a70!important;margin:6px 0 8px!important}
+.debate-turn footer{font-size:8.5px;color:#7a8497}.debate-turn footer b{font-size:11px;color:#17675d}
+.debate-turn.objection{border-left:4px solid #d1695b}.debate-turn.objection .debate-avatar{background:#fee9e5;color:#9d3f35}.debate-turn.objection strong small{background:#fee9e5;color:#a34236}
+.debate-turn.proposal{border-left:4px solid #d99b38}.debate-turn.proposal .debate-avatar{background:#fff1d7;color:#8b5b13}.debate-turn.proposal strong small{background:#fff1d7;color:#8b5b13}
+.debate-turn.resolution{border-left:4px solid #268b73;background:#f7fffc}.debate-turn.resolution .debate-avatar{background:#dff5ee;color:#176b58}.debate-turn.resolution strong small{background:#dff5ee;color:#176b58}
+.debate-connector{height:18px;margin:-12px 0;display:flex;align-items:center;gap:8px;padding-left:31px;color:#8a92a2}.debate-connector:before{content:"";width:1px;height:18px;background:#b8bfcc}.debate-connector span{font-size:6.5px;font-weight:900;letter-spacing:.8px}
+.action-explainer{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.action-explainer>div{display:flex;gap:9px;align-items:flex-start;padding:11px;border:1px solid #dfe3eb;border-radius:11px;background:#f8f9fc}
+.action-explainer svg{width:16px;color:#5549bd;flex:none}.action-explainer span{display:flex;flex-direction:column;gap:3px}.action-explainer b{font-size:10px;color:#31394e}.action-explainer small{font-size:8.5px;line-height:1.4;color:#747e91}
+
+@media(max-width:800px){.evaluation-modal.review-workspace{height:min(900px,94vh)}.review-split{grid-template-columns:1fr!important;overflow:auto}.review-score-pane,.review-insight-pane{overflow:visible;padding:17px}.review-resizer{display:none}.review-score-hero{grid-template-columns:92px minmax(0,1fr);padding:15px}.score-ring{width:86px;height:86px}.score-ring>div{width:65px;height:65px}.score-ring strong{font-size:27px;line-height:65px}.review-score-hero h3{font-size:19px}.score-rubric{grid-template-columns:1fr 1fr}.action-explainer{grid-template-columns:1fr}.review-insight-pane .modal-actions{position:static;margin:14px 0 0;padding:14px 0 0}.proposal-input>div:first-child{display:block}.proposal-input>div:first-child strong{display:block;margin-top:3px}.proposal-input-row{grid-template-columns:1fr}.proposal-input-row button{width:100%}}
 
 /* Keep the core thinking loop visible together on tablet and compact desktop. */
 @media(min-width:621px) and (max-width:980px){
@@ -227,6 +260,10 @@
 .pipeline-idea-card>.score-tile{top:14px;right:14px}.pipeline-idea-card{padding-right:82px}
 .evaluation-card .score-pill.score-tile.compact{width:48px;min-width:48px;height:45px;border-radius:10px}
 .evaluation-card .score-pill.score-tile.compact strong{font-size:17px}.evaluation-card .score-pill.score-tile.compact small{font-size:7px;margin-top:3px;color:#ffffffd6}
+/* Initial cards stay neutral; numeric evaluation appears only inside Review with its rubric. */
+.pipeline-idea-card>.score-tile,.evaluation-card .score-pill.score-tile.compact{background:linear-gradient(145deg,#eef0f7,#dde1ee);color:#454e66;box-shadow:none;border:1px solid #d3d8e5}
+.pipeline-idea-card>.score-tile strong,.pipeline-idea-card>.score-tile small,.evaluation-card .score-pill.score-tile.compact strong,.evaluation-card .score-pill.score-tile.compact small{display:none}
+.pipeline-idea-card>.score-tile:after,.evaluation-card .score-pill.score-tile.compact:after{content:"REVIEW";font:900 7px Manrope;letter-spacing:.7px;color:#4d5570}
 
 @media(max-width:980px){.workspace-switcher>button{min-width:190px}.panel-size-actions button{min-width:34px;padding:0 5px}.panel-size-actions button span{display:none}}
 @media(max-width:620px){.workspace-switcher{width:100%;max-width:none;padding:5px}.workspace-switcher>button{min-width:0;height:48px}.pipeline-idea-card{padding-right:76px}}
