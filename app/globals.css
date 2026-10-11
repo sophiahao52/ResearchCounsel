@@ -207,3 +207,26 @@
 
 @media(max-width:980px){.workspace-switcher{margin-bottom:10px}.pipeline-column{height:calc(100vh - 168px)}.execution-page .execution-column{height:calc(100vh - 168px)}}
 @media(max-width:620px){.workspace-switcher{display:grid;grid-template-columns:1fr 1fr;gap:6px}.workspace-switcher>button{min-width:0;height:48px;padding:7px 9px}.workspace-switcher b{font-size:10px}.workspace-switcher small{font-size:8px}.workspace-switcher>button>svg{display:none}.pipeline-grid.ideas-page{display:flex!important;flex-direction:column;gap:10px}.ideas-page .idea-panel-resizer{display:none}.ideas-page .pipeline-column{height:70vh;min-height:520px}.execution-page .execution-column{height:calc(100vh - 142px);min-height:520px}}
+
+/* Polished centered view switcher and expressive score tiles. */
+.workspace-switcher{width:max-content;max-width:calc(100% - 12px);justify-content:center;padding:6px;border:1px solid #d3d9e4;border-radius:19px;background:#ffffffcc;box-shadow:0 12px 32px #17203314;backdrop-filter:blur(12px)}
+.workspace-switcher>button{min-width:235px;height:58px;border:0;border-radius:13px;background:transparent;box-shadow:none;padding:9px 15px;transition:transform .18s,background .18s,box-shadow .18s}
+.workspace-switcher>button:hover{background:#eef1f7;transform:translateY(-1px)}
+.workspace-switcher>button.active{background:linear-gradient(135deg,#202a45,#303d65);box-shadow:0 8px 20px #1e294533}
+.workspace-switcher>button.active:first-child{background:linear-gradient(135deg,#4438a7,#6357d8)}
+.workspace-switcher>button>svg{width:21px;height:21px}.workspace-switcher b{font-size:13px}.workspace-switcher small{font-size:10px}
+.panel-size-actions{padding:3px;border:1px solid #ffffff35;border-radius:10px;background:#00000014}
+.panel-size-actions button{width:auto;min-width:43px;height:30px;display:flex;gap:4px;padding:0 7px;border:0;border-radius:7px;background:transparent;font-size:8px;font-weight:850}
+.panel-size-actions button+button{border-left:1px solid #ffffff26}.panel-size-actions button:hover{background:#ffffff29}.panel-size-actions button span{display:inline}.panel-size-actions svg{width:12px;height:12px}
+.score-pill.score-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:58px;min-width:58px;height:53px;border:0;border-radius:12px;color:#fff;box-shadow:0 8px 18px #20274425;overflow:hidden}
+.score-pill.score-tile strong{font:900 21px/1 Manrope;color:inherit;letter-spacing:-.8px}.score-pill.score-tile small{margin-top:4px;font:850 6px/1 Manrope;letter-spacing:.45px;color:#ffffffc9}
+.score-pill.score-tile.score-violet{background:linear-gradient(145deg,#7b68ee,#4e3fc2);box-shadow:0 8px 18px #5847c747}
+.score-pill.score-tile.score-teal{background:linear-gradient(145deg,#34a89d,#18756e);box-shadow:0 8px 18px #18756e3d}
+.score-pill.score-tile.score-amber{background:linear-gradient(145deg,#e8a84a,#bd7424);box-shadow:0 8px 18px #bd74243a}
+.score-pill.score-tile.score-blue{background:linear-gradient(145deg,#5d9ee8,#3469ad);box-shadow:0 8px 18px #3469ad3d}
+.pipeline-idea-card>.score-tile{top:14px;right:14px}.pipeline-idea-card{padding-right:82px}
+.evaluation-card .score-pill.score-tile.compact{width:48px;min-width:48px;height:45px;border-radius:10px}
+.evaluation-card .score-pill.score-tile.compact strong{font-size:17px}.evaluation-card .score-pill.score-tile.compact small{font-size:7px;margin-top:3px;color:#ffffffd6}
+
+@media(max-width:980px){.workspace-switcher>button{min-width:190px}.panel-size-actions button{min-width:34px;padding:0 5px}.panel-size-actions button span{display:none}}
+@media(max-width:620px){.workspace-switcher{width:100%;max-width:none;padding:5px}.workspace-switcher>button{min-width:0;height:48px}.pipeline-idea-card{padding-right:76px}}
