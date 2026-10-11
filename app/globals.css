@@ -181,3 +181,29 @@
   .evaluation-column .evaluation-card p{display:none}
   .evaluation-actions{grid-template-columns:1fr 1fr}
 }
+
+/* Two-page workflow: an adjustable Ideas workspace and a dedicated Execution page. */
+.workspace-switcher{max-width:1640px;margin:0 auto 14px;display:flex;gap:8px;align-items:center}
+.workspace-switcher>button{min-width:190px;height:52px;border:1px solid #cbd2df;border-radius:13px;background:#f8fafc;padding:8px 13px;display:flex;align-items:center;gap:10px;text-align:left;color:#445065;box-shadow:0 4px 15px #1f293709}
+.workspace-switcher>button>svg{width:18px;color:#667085}.workspace-switcher>button>span{display:flex;flex-direction:column;gap:2px}.workspace-switcher b{font:800 12px Manrope}.workspace-switcher small{font-size:9px;color:#7a8496}
+.workspace-switcher>button.active{border-color:#25304a;background:#172033;color:#fff;box-shadow:0 8px 22px #17203325}.workspace-switcher>button.active svg,.workspace-switcher>button.active small{color:#cbd4e8}
+.pipeline-grid.ideas-page{display:grid;gap:0;max-width:1640px}
+.ideas-page .generation-column{grid-column:1;display:flex!important}
+.ideas-page .idea-panel-resizer{grid-column:2}
+.ideas-page .evaluation-column{grid-column:3;display:flex!important}
+.ideas-page .execution-column{display:none!important}
+.idea-panel-resizer{position:relative;display:block;width:12px;border:0;background:transparent;cursor:col-resize;padding:0}
+.idea-panel-resizer:before{content:"";position:absolute;inset:0 4px;border-radius:99px;background:#c9cfda;transition:background .18s,transform .18s}
+.idea-panel-resizer span,.idea-panel-resizer span:before,.idea-panel-resizer span:after{content:"";position:absolute;z-index:1;left:5px;top:calc(50% - 11px);width:2px;height:22px;border-radius:2px;background:#6e7788}
+.idea-panel-resizer span:before{left:-3px;top:0}.idea-panel-resizer span:after{left:3px;top:0}.idea-panel-resizer:hover:before,.idea-panel-resizer:focus:before{background:#7a70dc;transform:scaleX(1.35)}.idea-panel-resizer:focus{outline:none}
+.panel-size-actions{display:flex!important;flex-direction:row!important;gap:5px!important;margin-left:auto}
+.panel-size-actions button{width:31px;height:31px;border:1px solid #ffffff3d;border-radius:8px;background:#ffffff16;color:#fff;display:grid;place-items:center;padding:0}
+.panel-size-actions button:hover{background:#ffffff2b}.panel-size-actions svg{width:14px;height:14px}
+.pipeline-grid.execution-page{display:block;max-width:1120px;margin:0 auto}
+.execution-page .generation-column,.execution-page .evaluation-column,.execution-page .idea-panel-resizer{display:none!important}
+.execution-page .execution-column{display:flex!important;width:100%;height:calc(100vh - 180px);min-height:560px}
+.execution-page .execution-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-content:start;overflow:auto}
+.execution-page .execution-detail{border:1px solid #d8dee8;border-radius:14px;margin:0 14px 18px}
+
+@media(max-width:980px){.workspace-switcher{margin-bottom:10px}.pipeline-column{height:calc(100vh - 168px)}.execution-page .execution-column{height:calc(100vh - 168px)}}
+@media(max-width:620px){.workspace-switcher{display:grid;grid-template-columns:1fr 1fr;gap:6px}.workspace-switcher>button{min-width:0;height:48px;padding:7px 9px}.workspace-switcher b{font-size:10px}.workspace-switcher small{font-size:8px}.workspace-switcher>button>svg{display:none}.pipeline-grid.ideas-page{display:flex!important;flex-direction:column;gap:10px}.ideas-page .idea-panel-resizer{display:none}.ideas-page .pipeline-column{height:70vh;min-height:520px}.execution-page .execution-column{height:calc(100vh - 142px);min-height:520px}}
