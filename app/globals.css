@@ -164,3 +164,20 @@
 .modal-actions .develop-action{background:#17675d;border-color:#17675d}.modal-actions .develop-action:hover{background:#0d584f}
 
 @media(max-width:800px){.evaluation-modal.review-workspace{height:min(900px,94vh)}.review-split{grid-template-columns:1fr!important;overflow:auto}.review-score-pane,.review-insight-pane{overflow:visible;padding:17px}.review-resizer{display:none}.review-score-hero{grid-template-columns:92px minmax(0,1fr);padding:15px}.score-ring{width:86px;height:86px}.score-ring>div{width:65px;height:65px}.score-ring strong{font-size:27px;line-height:65px}.review-score-hero h3{font-size:19px}.review-insight-pane .modal-actions{position:static;margin:14px 0 0;padding:14px 0 0}.proposal-input>div:first-child{display:block}.proposal-input>div:first-child strong{display:block;margin-top:3px}.proposal-input-row{grid-template-columns:1fr}.proposal-input-row button{width:100%}}
+
+/* Keep the core thinking loop visible together on tablet and compact desktop. */
+@media(min-width:621px) and (max-width:980px){
+  .pipeline-workspace{padding:14px}
+  .mobile-pipeline-tabs{display:none}
+  .pipeline-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.9fr);gap:14px;max-width:none;align-items:start}
+  .pipeline-column{display:flex!important;height:calc(100vh - 98px)}
+  .generation-column{grid-column:1}
+  .evaluation-column{grid-column:2}
+  .execution-column{grid-column:1/-1;height:auto;min-height:460px}
+  .generation-column .column-head h1,.evaluation-column .column-head h1{font-size:19px}
+  .generation-column .column-head p,.evaluation-column .column-head p{font-size:11px}
+  .evaluation-column .evaluation-card{grid-template-columns:18px minmax(0,1fr) 40px 18px;padding:12px 10px;gap:7px}
+  .evaluation-column .evaluation-card h2{font-size:13px}
+  .evaluation-column .evaluation-card p{display:none}
+  .evaluation-actions{grid-template-columns:1fr 1fr}
+}
