@@ -30,7 +30,7 @@ const variationSeeds = [
 export async function discoverIdeas(prompt: string): Promise<DiscoveryIdea[]> {
   await wait();
   const normalized = prompt.toLowerCase();
-  if (/emerging|what('s| is) next|new technolog/.test(normalized)) return discoveryCatalog.slice(0,6);
+  if (/emerging|what('s| is) next|new technolog/.test(normalized)) return discoveryCatalog.slice(0,7);
   const subject = prompt
     .replace(/^(discover|explore|generate|ideas? (for|about)|what can|how can|applications? of)\s+/i, "")
     .replace(/\?+$/, "")
@@ -43,6 +43,7 @@ export async function discoverIdeas(prompt: string): Promise<DiscoveryIdea[]> {
     ["Access & Inclusion", `${display} Access Network`, `Lower the cost and expertise barriers that prevent more people from benefiting from ${subject}.`],
     ["Sustainability", `Resource-Smart ${display}`, `Reduce the energy, materials, and operational waste associated with ${subject}.`],
     ["New Business Models", `${display} Outcomes Platform`, `Package ${subject} around verified outcomes, shared incentives, and a repeatable service model.`],
+    ["Collaboration", `${display} Collaboration Hub`, `Help organizations explore and apply ${subject} together while keeping roles, decisions, and ownership clear.`],
   ] as const;
   return concepts.map(([industry,title,description],index)=>({title,description,industry,applications:[industry,display,"Focused concept"],novelty:76+((index*5)%18),score:76+((index*5)%18)}));
 }
