@@ -12,6 +12,7 @@ import type { AgentEvaluation, DiscoveryIdea, IdeaNode } from "@/lib/types/innov
 const nodeTypes = { idea: IdeaNodeCard };
 const examples = ["Privacy and cybersecurity", "Emerging AI technologies", "Sustainable energy", "Healthcare innovation"];
 const kindLabels = { root: "Seed", variation: "Variation", merged: "Merged", improved: "Improved" };
+const revisedCouncilScore=(idea:Pick<StoredIdea,"score">)=>72+Math.max(-6,Math.min(6,Math.round(((idea.score??72)-72)/4)));
 
 function StageProgress({stage}:{stage:number}) {
   const stages=["Set focus","Develop ideas","Critique","Deliver"];
@@ -118,8 +119,8 @@ function IdeasListWorkspace(){
   const ideaGridRef=useRef<HTMLDivElement>(null);
   const allIdeas=Object.values(ideas);
   const roots=allIdeas.filter(idea=>idea.kind==="root"&&idea.parentIds.length===0);
-  const visible=(activeParentId?allIdeas.filter(idea=>idea.parentIds.includes(activeParentId)):roots).sort((a,b)=>(b.score??0)-(a.score??0));
-  const saved=selectedIds.map(id=>ideas[id]).filter(Boolean).sort((a,b)=>(b.score??0)-(a.score??0));
+  const visible=(activeParentId?allIdeas.filter(idea=>idea.parentIds.includes(activeParentId)):roots).map(idea=>({...idea,score:revisedCouncilScore(idea)})).sort((a,b)=>(b.score??0)-(a.score??0));
+  const saved=selectedIds.map(id=>ideas[id]).filter(Boolean).map(idea=>({...idea,score:revisedCouncilScore(idea)})).sort((a,b)=>(b.score??0)-(a.score??0));
   const selectedSaved=selectedSavedIds.map(id=>ideas[id]).filter(Boolean);
   const execution=executionIds.map(id=>ideas[id]).filter(Boolean);
   const modalIdea=modalId?ideas[modalId]:undefined;
